@@ -18,12 +18,12 @@
 
 
 
-make_phrase <- function(num, num_word, item, verb, adjective, location){
+make_phrase <- function(num, num_word, item, verb = " ", adjective = " ", location = " "){
 
   verb <- str_replace_na(verb, "")
+  adjective <- str_replace_na(adjective, "")
+  location <- str_replace_na(location, "")
 
-  #????
-
-
+  return(trimws(gsub("\\s+", " ", glue("{num} {adjective} {item} {verb} {location}"))))
 }
 
