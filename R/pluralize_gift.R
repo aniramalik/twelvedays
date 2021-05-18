@@ -17,5 +17,5 @@ pluralize_gift <- function(gift){
     str_replace("y$", "ies") %>%
     str_replace("oo", "ee") %>%
     str_replace(newGift, glue("{newGift}s"))
-  return(gift)
+  return(newGift)
 }
