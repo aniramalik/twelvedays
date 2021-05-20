@@ -1,0 +1,66 @@
+---
+title: "Challenge 6"
+author: "Anira Malik"
+date: "5/16/2021"
+output: html_document
+---
+
+My repository: https://github.com/aniramalik/twelvedays
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(testthat)
+```
+
+```{r}
+test_that("pluralize_gift", {
+  gift <- "goose"
+  expect_equal(pluralize_gift(gift), "geese")
+})
+```
+
+```{r}
+test_that("pluralize_gift", {
+  gift <- "duck"
+  expect_equal(pluralize_gift(gift), "ducks")
+})
+```
+
+```{r}
+test_that("pluralize_gift", {
+  gift <- "lucky"
+  expect_equal(pluralize_gift(gift), "luckies")
+})
+```
+
+```{r}
+test_that("pluralize_gift", {
+  gift <- "poo"
+  expect_equal(pluralize_gift(gift), "pee")
+})
+```
+
+num, num_word, item, verb = " ", adjective = " ", location = " "
+
+```{r}
+test_that("make_phrase", {
+  num <- 2
+  num_word <- "second"
+  item <- "ring"
+  verb <- "singing"
+  adjective <- "frog"
+  location <- "in an apple tree"
+  expect_equal(make_phrase(num, num_word, item, verb, adjective, location), "frog ring singing in an apple tree")
+})
+```
+
+```{r}
+test_that("sing_day", {
+  dataset <- xmas
+  days <- xmas$Day.in.Words
+  line <- 1
+  phrase_col <- xmas$Full.Phrase
+  expect_equal(sing_day(dataset, days, line, phrase_col), "On the first day of Christmas, my true love sent to me, partridge in a pear tree.")
+})
+```
+
+
